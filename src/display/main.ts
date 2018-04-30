@@ -31,6 +31,9 @@ export class JupyterDisplay extends vscode.Disposable {
         this.disposables.push(vscode.commands.registerCommand(Commands.Jupyter.Kernel_Options, this.showKernelOptions.bind(this)));
         this.previewWindow = new TextDocumentContentProvider();
         this.disposables.push(vscode.workspace.registerTextDocumentContentProvider(jupyterSchema, this.previewWindow));
+        this.disposables.push(vscode.commands.registerCommand(Commands.Jupyter.ClearResults, () => {
+            this.server.clearResults();
+        }));
         this.cellOptions = new CellOptions(cellCodeLenses);
         this.disposables.push(this.cellOptions);
         this.server.on('settings.appendResults', append => {

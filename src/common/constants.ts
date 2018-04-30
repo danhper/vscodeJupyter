@@ -12,6 +12,7 @@ export namespace Commands {
         export const StartKernelForKernelSpeck = 'jupyter.sartKernelForKernelSpecs';
         export const ExecuteRangeInKernel = 'jupyter.execRangeInKernel';
         export const ExecuteSelectionOrLineInKernel = 'jupyter.runSelectionLine';
+        export const ClearResults = 'jupyter.clearResults';
         export namespace Cell {
             export const ExecuteCurrentCell = 'jupyter.execCurrentCell';
             export const ExecuteCurrentCellAndAdvance = 'jupyter.execCurrentCellAndAdvance';

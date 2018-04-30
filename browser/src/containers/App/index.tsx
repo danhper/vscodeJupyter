@@ -40,6 +40,9 @@ class App extends React.Component<AppProps, AppState>{
     this.socket.on('clientExists', (data: any) => {
       this.socket.emit('clientExists', { id: data.id });
     });
+    this.socket.on('results.clear', (_data: any) => {
+      this.clearResults();
+    });
     this.socket.on('results', (value: NotebookOutput[]) => {
       if (!this.props.settings.appendResults) {
         this.props.resultActions.clearResults();
